@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block 'main' %}
+
+        
+
+<div class="col-md-3 mt-5">
+    <h2>ISSUED BOOK</h2>
+    <a href="/issuedbooks"><button type="button" class="btn btn-secondary mt-3">BOOK ISSUE</button>
+    </a>
+</div>
+
+        <div class="col-md-9 mt-5 ">
+            <table class="table">
+                <tr style="background-color: green;">
+                    <th>STUDENT NAME</th>
+                    <th>BOOK NAME</th>
+                    <th>ISSUE DATE</th>
+                    <th>RETURN DATE</th>
+                    <th>CHARGE</th>
+                    <th>DELETE</th>
+                </tr>
+
+                {% for d in data %}
+
+                <tr>
+                    <td>{{d.studentname}}</td>
+                    <td  style="background-color:yellow;">{{d.bookname}}</td>
+                    <td>{{d.issuedate}}</td>
+                    <td>{{d.returndate}}</td>
+                    <td  style="background-color:yellow;">{{d.charge}}</td>
+                    <td><a href="/delete/{{d.id}}"><button class="btn btn-danger">Delete</button></a></td>
+                </tr>
+
+                
+
+
+                {% endfor %}
+
+        
+
+    
+
+{% endblock 'main' %}
+

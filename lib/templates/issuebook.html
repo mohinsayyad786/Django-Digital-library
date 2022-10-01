@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block 'main' %}
+
+<h2 class="mt-5" style="color: red; background-color: gold;">Book Issue</h2>
+
+<div class="col-md-8 mt-4 m-auto">
+
+    <form method="POST" action="/issuebook">
+        {% csrf_token %}
+        
+        <div class="mb-3">
+            <label for="studentname" class="form-label">STUDENT NAME:</label>
+            <input type="text" class="form-control" name="SN" id="studentname" placeholder="Enter Student Name..." required>
+          </div>
+
+          <div class="mb-3">
+            <label for="bookname" class="form-label">BOOK NAME:</label>
+            <input type="text" class="form-control" name="BN" id="bookname" placeholder="Enter Book Name..." required>
+            <marquee width="100%" direction="left" height="30px" scrollamount="5" style="background-color:yellow;"> 
+              <h4>harry potter,stranger things,WINGS NOT FIRE,AGNIPANKH,FAILURE OF SUCCESS,MY JOURNEY,FEAR NOT BE STRONG,
+              BELIEVE IN YOUR SELF,BHAGVAD GITA...</h4>
+              </marquee>
+          </div>
+            
+          <div class="mb-3">
+            <label for="issuedate" class="form-label">ISSUE DATE:</label>
+            <input type="date" class="form-control" name="ID" id="issuedate" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="returndate" class="form-label">RETURN DATE:</label>
+            <input type="date" class="form-control" name="RD" id="returndate" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="charge" class="form-label">CHARGE 3RS/day:</label>
+            <textarea class="form-control" name="BC" id="charge" rows="3" required></textarea>
+          </div>
+
+
+          <div class="mb-3">
+            <input type="submit" class="form-control btn btn-warning" name="send" value="SUBMIT"/>
+          </div>
+    </form>
+
+</div>
+
+
+{% endblock 'main' %}
+
